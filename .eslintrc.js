@@ -33,7 +33,10 @@ module.exports = {
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
     semi: 0,
-    "space-before-function-paren": 0,
+    'space-before-function-paren': 0,
+    'no-mixed-operators': 0,
+    'comma-dangle': 0,
+    'new-parens': 0,
     'no-param-reassign': ['error', {
       props: true,
       ignorePropertyModificationsFor: [

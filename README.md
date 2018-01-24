@@ -1,4 +1,4 @@
-# color
+# Which color is now?
 
 > A Vue.js project
 

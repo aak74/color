@@ -4,27 +4,34 @@
 </template>
 
 <script>
-const pad = (num, size) => {
-  let s = `${num}`;
-  while (s.length < size) s = `0${s}`;
-  return s;
-}
 
 export default {
   name: 'WhichColor',
-  props: ['r', 'g', 'b', 'width', 'height'],
+  props: {
+    r: [String, Number],
+    g: [String, Number],
+    b: [String, Number],
+
+    width: {
+      type: [String, Number],
+      default: 80
+    },
+    height: {
+      type: [String, Number],
+      default: 40
+    }
+
+  },
   computed: {
+    background() {
+      return `background-color: rgb(${this.r},${this.g},${this.b});`;
+    },
+    size() {
+      return `height: ${this.height}px;width: ${this.width}px;`;
+    },
     style1() {
-      return `background-color: rgb(${this.r},${this.g},${this.b})`;
+      return `${this.background};${this.size};`;
     },
   },
 };
 </script>
-
-<style>
-.which-color {
-  height: 100px;
-  width: 100px;
-}
-
-</style>
